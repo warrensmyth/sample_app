@@ -38,7 +38,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     assert_redirected_to edit_user_url(@user)
     log_in_as(@user)
-    assert_redirected_to @user
+    assert_redirected_to root_url
     assert_nil session[:forwarding_url]
   end
 
@@ -49,6 +49,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_redirected_to edit_user_url(@user)
     assert_nil session[:forwarding_url]
     log_in_as(@user)
-    assert_redirected_to user_url(@user)
+    assert_redirected_to root_url
   end
 end
